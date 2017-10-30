@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reading</title>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<link rel="stylesheet" href="index.css">
+
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js"></script>
+	<script src="js/theme.js"></script>
+	<script src="js/pic.js"></script>
+	<script src="js/lesson.js"></script>
+	<script src="js/sound.js"></script>
+<body>
+	<!-- 首页 -->
+	<div id="home" class="ui-page-theme-a" data-role="page">
+		<!-- 侧边panle start -->
+		<div data-role="panel" id="panel" data-display="overlay">
+		    <div><!-- 头像 -->
+		    	<img src="img/icon.png" alt="头像" >
+	    	    <p>USER Name</p>
+		    </div>
+			<div class="ui-field-contain" id="theme-selector">
+			</div>
+		</div>
+
+		<!-- 页头start -->
+		<header data-role="header" id="header-home" >
+			<h1>读英语</h1>
+			<a href="#panel" class="ui-btn ui-icon-gear ui-corner-all ui-btn-icon-right ui-btn-right ui-btn-icon-notext " >user</a>
+		</header>
+
+		<!-- 内容 -->
+		<div id="home-content">
+			<div id="home-content-title">
+				<img id="homeBg" src="img/3.PNG"/>
+				<div id="time"></div>
+			</div>
+			<section id="home-sort">
+				<div id="home-sort-ti" class="ui-grid-c" >
+					<div class="ui-block-a">
+						<a href="#sort">
+							<div class="ui-body ui-body-d">
+					 			<div id="home-sort-1" class="home-sort-icon">类</div>
+							</div>
+							<div class="home-sort-text">分类</div>
+						</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#lesson">
+							<div class="ui-body ui-body-d">
+								<div id="home-sort-2" class="home-sort-icon">课</div>
+							</div>
+							<div class="home-sort-text">课文</div>
+						</a>				
+					</div>
+					<div class="ui-block-c">
+						<a href="#sound">
+							<div class="ui-body ui-body-d">
+								<div id="home-sort-3" class="home-sort-icon">音</div>
+							</div>
+							<div class="home-sort-text">音标</div>
+						</a>
+					</div>
+					<div class="ui-block-d">
+						<a href="#pictures">
+							<div class="ui-body ui-body-d">
+								<div id="home-sort-4" class="home-sort-icon">图</div>
+							</div>
+							<div class="home-sort-text">趣图</div>
+						</a>
+					</div>				
+				</div>
+
+				<article>
+					<ul data-role="listview" data-inset="true">
+					    <li><a href="#">France</a></li>
+					    <li><a href="#">Germany</a></li>
+					    <li><a href="#">Great Britain</a></li>
+					    <li><a href="#">Finland</a></li>
+					    <li><a href="#">United States</a></li>
+					</ul>
+				</article>
+			</section>
+		</div>
+		<!-- 底部导航start -->
+		<nav data-role="footer" data-tap-toggle="false" data-tap-toggle="false" data-position="fixed">
+			<div data-role="navbar" data-grid="b">
+				<ul>
+					<li><a href="#home" data-icon="home" class="ui-btn-active" id="footer-icon-home" >首页</a></li>
+					<li><a href="#sort" data-icon="grid" data-transition="none">分类</a></li>
+					<li><a href="#user" data-icon="user" data-transition="none">我的</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- 底部导航end -->
+	</div>
+	<!-- 首页end -->
+
+	<!-- sort类目页start -->
+    <div id="sort" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-sort" >
+			<h1>分类</h1>
+			<a href="#home" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none">back</a>
+			<a href="#user" class="ui-btn ui-icon-user ui-corner-all ui-btn-icon-right ui-btn-right ui-btn-icon-notext " data-transition="none">user</a>
+		</header>
+		<!-- 页头end -->
+
+		<section class="ui-grid-a">
+			<div class=" ui-block-a">
+				<div class="sort-list">
+					<a href="#lesson" >
+						<div class="sort-title">
+							<div id="sort-title-1" class="sort-title-icon">课</div>	
+							<div class="sort-title-text">课文</div>				
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="ui-block-b">
+				<div class="sort-list">
+					<a href="#sound" >
+						<div class="sort-title">
+							<div id="sort-title-2" class="sort-title-icon">音</div>
+							<div class="sort-title-text">音标</div>				
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="ui-block-a">
+				<div class="sort-list">
+					<a href="#pictures" >
+						<div class="sort-title">
+							<div id="sort-title-3" class="sort-title-icon">图</div>
+							<div class="sort-title-text">图</div>				
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="ui-block-b">
+				<div class="sort-list">
+					<a href="#" >
+						<div class="sort-title">
+							<div id="sort-title-4" class="sort-title-icon">类</div>
+							<div class="sort-title-text">类</div>				
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 底部导航start -->
+		<nav data-role="footer" data-tap-toggle="false" data-position="fixed">
+			<div data-role="navbar" data-grid="b">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="none">首页</a></li>
+					<li><a href="#sort" data-icon="grid"  class="ui-btn-active" id="footer-icon-sort">分类</a></li>
+					<li><a href="#user" data-icon="user" data-transition="none">我的</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- 底部导航end --> 
+	</div>
+		<!-- 类目页end -->
+
+
+	<!-- 用户中心 -->
+	<div id="user" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-user" >
+			<h1>个人中心</h1>
+			<a href="#sort" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >user</a>
+		</header>
+		<!-- 页头end -->
+
+		<section id="user-content">
+			<div id="user-title">
+				<img src="img/icon.png" alt="头像">
+			</div>
+				<div class="user-name">秋菊Rachel</div>
+				<div id="user-tool">
+					<a href="#stars">
+						<div id="user-tool-stars" class="user-tool-nav">
+							<div id="user-ico-stars"></div>
+							<span>收藏</span>
+						</div>
+					</a>
+					<a href="#question">
+						<div id="user-tool-question" class="user-tool-nav">
+							<div id="user-ico-question"></div>
+							<span>常见问题</span>
+						</div>					
+					</a>
+					<a href="#setting">
+						<div id="user-tool-setting" class="user-tool-nav">
+							<div id="user-ico-setting"></div>
+							<span>设置</span>
+						</div>
+					</a>
+					<a href="#">	
+						<div id="user-tool-theme" class="user-tool-nav">
+							<div id="user-ico-theme"></div>
+							<span>主题</span> 
+							<div class="ui-field-contain"  id="theme-selector">
+								<fieldset data-role="controlgroup" class="ui-mini" data-type="horizontal">
+									<legend style="display: none">主题</legend>						
+									<label for="a">白天</label>
+									<input type="radio" name="theme" id="a" checked >
+									<label for="b">夜间</label>
+									<input type="radio" name="theme" id="b">
+								</fieldset>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="top-clr"></div>
+		</section>
+
+			<!-- 底部导航start -->
+		<nav data-role="footer" data-tap-toggle="false" data-position="fixed">
+			<div data-role="navbar" data-grid="b">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="none">首页</a></li>
+					<li><a href="#sort" data-icon="grid" data-transition="none">分类</a></li>
+					<li><a href="#user" data-icon="user" class="ui-btn-active" id="footer-icon-user">我的</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- 底部导航end -->
+	</div>
+	<!-- 用户 end -->
+
+
+	<!-- 分类下的二级页面 -->
+	<!-- 文章列表  二级页面 -->
+	<div id="lesson" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-lesson" >
+			<h1>课文列表</h1>
+			<a href="#sort" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+
+		<div class="top-clr"></div>
+		<section>
+		   	<ul id="lesson-content"  data-role="listview" data-filter="true" data-filter-placeholder="搜索文章..." data-inset="true" >
+		   		<!-- 加载的文章列表 -->
+		   	</ul>
+		</section>
+	</div>
+
+	<!-- 课文二级页面的子页面 -->
+	<div id="lesson-page" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-lesson-page" >
+			<h1>课文</h1>
+			<a href="#lesson" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+		<div class="top-clr"></div>
+
+		<section id="lesson-page-content" >
+			<!-- 加载的文章文字 -->
+		</section>
+
+		<footer data-role="footer" data-tap-toggle="false" data-position="fixed" id="audio-player">
+			<div id="player-btn" class="player-play"></div>
+			<!-- 播放进度条 -->
+			<div id="time-show">00:00/00:00</div>
+			<div id="player-progress">
+				<div id="player-span">
+					<i id="player-progress-dot"></i>
+				</div>
+			</div>
+			<audio id="audio">
+				<!-- <source src="./source/lesson/2-1.mp3" type="audio/mpeg"> -->
+				Your browser does not support the audio tag.
+			</audio>
+		</footer>
+	</div>
+	
+
+
+
+	<!-- 学音标  二级页面 -->
+	<div id="sound" class="ui-page-theme-a" data-role="page" data-dom-cache="true">
+		<!-- 页头start -->
+		<header data-role="header" id="header-sound" >
+			<h1>音标</h1>
+			<a href="#sort" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+
+		<div class="top-clr"></div>
+		<section id="sound-content" >
+<!-- class="ui-grid-c" -->
+		</section>
+
+	</div>
+
+
+	<!--  看图学词  二级页面 -->
+	<div id="pictures" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-pictures" >
+			<h1>词句壁纸</h1>
+			<a href="#sort" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+
+		<!-- <div class="top-clr"></div> -->
+		<section>
+			<ul id="pictures-content">
+			<!-- 加载图片 -->
+			</ul>
+		</section>
+
+	</div>
+
+
+
+	<!-- 词句壁纸二级页面的子页面 -->
+	<div id="bigpic" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-bigpic" >
+			<h1>查看</h1>
+			<a href="#pictures" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+		<section id="bigpic-content">
+            <img src="source/images/2.jpg" width="100%" />
+            <h3 class="pic-title">文字</h3>
+            <p class="pic-detail">试着听从自己内心的声音，而不去在乎外面的声音。</p>
+		</section>
+	</div>
+	
+
+	<!-- 用户中心二级页面 -->
+	<!-- 收藏列表  二级页面 -->
+	<div id="stars" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-stars" >
+			<h1>收藏</h1>
+			<a href="#user" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+
+		<div class="top-clr"></div>
+		<section id="stars-content">
+		</section>
+
+	</div>
+
+
+	<!-- 问题  二级页面 -->
+	<div id="question" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-question" >
+			<h1>常见问题</h1>
+			<a href="#user" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+
+			<div class="top-clr"></div>
+		<section id="question-content">
+			<div>
+				<p>常见问题固定内容常见问题固定内容常见问题固定内容</p>
+				<p>常见问题固定内容常见问题固定内容常见问题固定内容</p>
+				<p>常见问题固定内容常见问题固定内容常见问题固定内容</p>
+				<p>常见问题固定内容常见问题固定内容常见问题固定内容</p>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- 资料设置  二级页面 -->
+	<div id="setting" class="ui-page-theme-a" data-role="page">
+		<!-- 页头start -->
+		<header data-role="header" id="header-setting" >
+			<h1>资料设置</h1>
+			<a href="#user" class="ui-btn ui-icon-carat-l ui-corner-all ui-btn-icon-left ui-btn-left ui-btn-icon-notext " data-transition="none" >back</a>
+		</header>
+		<!-- 页头end -->
+
+		<div class="top-clr"></div>
+		<div class="top-clr"></div>
+		<section id="setting-content">
+			<button id="setting-clear">清除缓存</button>
+		</section>
+
+	</div>
+
+
+</body>
+</html>
